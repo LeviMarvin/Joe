@@ -141,10 +141,10 @@ function _getRecord($self)
     $header[] = "CLIENT-IP:" . $ip;
     $header[] = "X-FORWARDED-FOR:" . $ip;
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $baiduSite);
+    curl_setopt($ch, CURLOPT_URL, "https://www.baidu.com/s?ie=UTF-8&wd={$site}");
     curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-    curl_setopt($ch, CURLOPT_REFERER, "https://www.baidu.com/s?ie=UTF-8&wd={$site}");
-    curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36");
+    curl_setopt($ch, CURLOPT_REFERER, $baiduSite);
+    curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
