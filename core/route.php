@@ -70,7 +70,7 @@ function _getPost($self)
     $self->response->throwJson(array("data" => $result));
 }
 
-/* 增加浏览量 已测试 √ */
+/* 增加阅读量 已测试 √ */
 function _handleViews($self)
 {
     $self->response->setStatus(200);

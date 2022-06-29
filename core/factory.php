@@ -1,7 +1,11 @@
 <?php
 
-require_once("phpmailer.php");
-require_once("smtp.php");
+require_once("phpmailer/PHPMailer.php");
+require_once("phpmailer/SMTP.php");
+require_once("phpmailer/Exception.php");
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 /* 加强评论拦截功能 */
 Typecho_Plugin::factory('Widget_Feedback')->comment = array('Intercept', 'message');
@@ -57,10 +61,10 @@ class Email
 {
     public static function send($comment)
     {
-        $mail = new PHPMailer();
+        $mail = new PHPMailer;
         $mail->isSMTP();
         $mail->SMTPAuth = true;
-        $mail->CharSet = 'UTF-8';
+        $mail->CharSet = 'utf-8';
         $mail->SMTPSecure = Helper::options()->JCommentSMTPSecure;
         $mail->Host = Helper::options()->JCommentMailHost;
         $mail->Port = Helper::options()->JCommentMailPort;
@@ -68,7 +72,7 @@ class Email
         $mail->Username = Helper::options()->JCommentMailAccount;
         $mail->From = Helper::options()->JCommentMailAccount;
         $mail->Password = Helper::options()->JCommentMailPassword;
-        $mail->isHTML(true);
+        $mail->isHTML();
         $text = $comment->text;
         $text = preg_replace_callback(
             '/\:\:\(\s*(呵呵|哈哈|吐舌|太开心|笑眼|花心|小乖|乖|捂嘴笑|滑稽|你懂的|不高兴|怒|汗|黑线|泪|真棒|喷|惊哭|阴险|鄙视|酷|啊|狂汗|what|疑问|酸爽|呀咩爹|委屈|惊讶|睡觉|笑尿|挖鼻|吐|犀利|小红脸|懒得理|勉强|爱心|心碎|玫瑰|礼物|彩虹|太阳|星星月亮|钱币|茶杯|蛋糕|大拇指|胜利|haha|OK|沙发|手纸|香蕉|便便|药丸|红领巾|蜡烛|音乐|灯泡|开心|钱|咦|呼|冷|生气|弱|吐血|狗头)\s*\)/is',

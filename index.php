@@ -1,10 +1,14 @@
 <?php
 
 /**
- * “ 心中无女人，代码自然神 - 78.AL ” <br /> “ 环境要求：PHP 5.4 ~ 7.4 ”
+ * 简洁、超强、开源、精华的 Typecho 主题。
+ * 原作者：<a href="https://78.al" >Joe</a>
+ * 环境要求：
+ *      PHP 5.5 以上
+ *      Typecho 1.0 以上
  * @package Joe
- * @author Joe
- * @link https://78.al
+ * @author 日暮清林
+ * @link https://blog.lmsite.eu.org
  */
 
 ?>
