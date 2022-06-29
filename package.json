@@ -1,6 +1,6 @@
 {
   "name": "typecho-joe-next",
-  "version": "7.3.7",
+  "version": "8.0",
   "description": "A Theme Of Typecho",
   "main": "index.php",
   "keywords": [
@@ -8,8 +8,9 @@
     "typecho",
     "joe theme",
     "typecho joe",
-    "typecho joe theme"
+    "typecho joe theme",
+    "levi_marvin"
   ],
-  "author": "Joe",
+  "author": "Levi_Marvin",
   "license": "ISC"
 }
