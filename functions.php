@@ -29,7 +29,7 @@ function themeConfig($form)
                     <li class="item" data-current="joe_global">全局设置</li>
                     <li class="item" data-current="joe_image">图片设置</li>
                     <li class="item" data-current="joe_post">文章设置</li>
-                    <li class="item" data-current="joe_aside">侧栏设置</li>
+                    <li class="item" data-current="joe_aside">栏目设置</li>
                     <li class="item" data-current="joe_index">首页设置</li>
                     <li class="item" data-current="joe_other">其他设置</li>
                 </ul>
@@ -69,22 +69,6 @@ function themeConfig($form)
     );
     $JNavMaxNum->setAttribute('class', 'joe_content joe_global');
     $form->addInput($JNavMaxNum->multiMode());
-
-    $JCustomNavs = new Typecho_Widget_Helper_Form_Element_Textarea(
-        'JCustomNavs',
-        NULL,
-        NULL,
-        '导航栏自定义链接（非必填）',
-        '介绍：用于自定义导航栏链接 <br />
-         格式：跳转文字 || 跳转链接（中间使用两个竖杠分隔）<br />
-         其他：一行一个，一行代表一个超链接 <br />
-         例如：<br />
-            百度一下 || https://baidu.com <br />
-            腾讯视频 || https://v.qq.com
-         '
-    );
-    $JCustomNavs->setAttribute('class', 'joe_content joe_global');
-    $form->addInput($JCustomNavs);
 
     $JList_Animate = new Typecho_Widget_Helper_Form_Element_Select(
         'JList_Animate',
@@ -373,7 +357,7 @@ function themeConfig($form)
     );
     $JAside_Author_Nick->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Author_Nick);
-    /* --------------------------------------- */
+
     $JAside_Author_Avatar = new Typecho_Widget_Helper_Form_Element_Textarea(
         'JAside_Author_Avatar',
         NULL,
@@ -384,7 +368,7 @@ function themeConfig($form)
     );
     $JAside_Author_Avatar->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Author_Avatar);
-    /* --------------------------------------- */
+
     $JAside_Author_Image = new Typecho_Widget_Helper_Form_Element_Textarea(
         'JAside_Author_Image',
         NULL,
@@ -395,7 +379,7 @@ function themeConfig($form)
     );
     $JAside_Author_Image->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Author_Image);
-    /* --------------------------------------- */
+
     $JAside_Wap_Image = new Typecho_Widget_Helper_Form_Element_Textarea(
         'JAside_Wap_Image',
         NULL,
@@ -406,7 +390,7 @@ function themeConfig($form)
     );
     $JAside_Wap_Image->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Wap_Image);
-    /* --------------------------------------- */
+
     $JAside_Author_Link = new Typecho_Widget_Helper_Form_Element_Text(
         'JAside_Author_Link',
         NULL,
@@ -416,7 +400,7 @@ function themeConfig($form)
     );
     $JAside_Author_Link->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Author_Link);
-    /* --------------------------------------- */
+
     $JAside_Author_Motto = new Typecho_Widget_Helper_Form_Element_Textarea(
         'JAside_Author_Motto',
         NULL,
@@ -430,7 +414,23 @@ function themeConfig($form)
     );
     $JAside_Author_Motto->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Author_Motto);
-    /* --------------------------------------- */
+
+    $JCustomNavs = new Typecho_Widget_Helper_Form_Element_Textarea(
+        'JCustomNavs',
+        NULL,
+        NULL,
+        '导航栏自定义链接（非必填）',
+        '介绍：用于自定义导航栏链接 <br />
+         格式：跳转文字 || 跳转链接（中间使用两个竖杠分隔）<br />
+         其他：一行一个，一行代表一个超链接 <br />
+         例如：<br />
+            百度一下 || https://baidu.com <br />
+            腾讯视频 || https://v.qq.com
+         '
+    );
+    $JCustomNavs->setAttribute('class', 'joe_content joe_aside');
+    $form->addInput($JCustomNavs);
+
     $JAside_Author_Nav = new Typecho_Widget_Helper_Form_Element_Select(
         'JAside_Author_Nav',
         array(
@@ -450,7 +450,7 @@ function themeConfig($form)
     );
     $JAside_Author_Nav->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Author_Nav->multiMode());
-    /* --------------------------------------- */
+
     $JAside_Timelife_Status = new Typecho_Widget_Helper_Form_Element_Select(
         'JAside_Timelife_Status',
         array(
@@ -463,7 +463,7 @@ function themeConfig($form)
     );
     $JAside_Timelife_Status->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Timelife_Status->multiMode());
-    /* --------------------------------------- */
+
     $JAside_Hot_Num = new Typecho_Widget_Helper_Form_Element_Select(
         'JAside_Hot_Num',
         array(
@@ -483,7 +483,7 @@ function themeConfig($form)
     );
     $JAside_Hot_Num->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Hot_Num->multiMode());
-    /* --------------------------------------- */
+
     $JAside_Newreply_Status = new Typecho_Widget_Helper_Form_Element_Select(
         'JAside_Newreply_Status',
         array(
@@ -497,7 +497,7 @@ function themeConfig($form)
     );
     $JAside_Newreply_Status->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Newreply_Status->multiMode());
-    /* --------------------------------------- */
+
     $JAside_Weather_Key = new Typecho_Widget_Helper_Form_Element_Text(
         'JAside_Weather_Key',
         NULL,
@@ -510,7 +510,7 @@ function themeConfig($form)
     );
     $JAside_Weather_Key->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Weather_Key);
-    /* --------------------------------------- */
+
     $JAside_Weather_Style = new Typecho_Widget_Helper_Form_Element_Select(
         'JAside_Weather_Style',
         array(
@@ -525,7 +525,7 @@ function themeConfig($form)
     );
     $JAside_Weather_Style->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Weather_Style->multiMode());
-    /* --------------------------------------- */
+
     $JADContent = new Typecho_Widget_Helper_Form_Element_Textarea(
         'JADContent',
         NULL,
@@ -537,7 +537,7 @@ function themeConfig($form)
     );
     $JADContent->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JADContent);
-    /* --------------------------------------- */
+
     $JCustomAside = new Typecho_Widget_Helper_Form_Element_Textarea(
         'JCustomAside',
         NULL,
@@ -549,7 +549,7 @@ function themeConfig($form)
     );
     $JCustomAside->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JCustomAside);
-    /* --------------------------------------- */
+
     $JAside_3DTag = new Typecho_Widget_Helper_Form_Element_Select(
         'JAside_3DTag',
         array(
@@ -562,7 +562,7 @@ function themeConfig($form)
     );
     $JAside_3DTag->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_3DTag->multiMode());
-    /* --------------------------------------- */
+
     $JAside_Flatterer = new Typecho_Widget_Helper_Form_Element_Select(
         'JAside_Flatterer',
         array(
@@ -575,7 +575,7 @@ function themeConfig($form)
     );
     $JAside_Flatterer->setAttribute('class', 'joe_content joe_aside');
     $form->addInput($JAside_Flatterer->multiMode());
-    /* --------------------------------------- */
+
     $JAside_History_Today = new Typecho_Widget_Helper_Form_Element_Select(
         'JAside_History_Today',
         array(
